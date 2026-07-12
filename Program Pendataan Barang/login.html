@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistem Toko</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+    <main class="login-page">
+        <section class="login-hero" aria-label="Login Sistem Pendataan Toko">
+            <div class="login-brand">
+                <span class="login-brand-mark">ST</span>
+                <div>
+                    <p>SistemToko</p>
+                    <small>Admin inventory</small>
+                </div>
+            </div>
+
+            <div class="login-card">
+                <div class="login-card-header">
+                    <p class="login-eyebrow">Selamat datang kembali</p>
+                    <h1>Masuk ke dashboard</h1>
+                    <span>Kelola barang, transaksi, dan laporan toko dalam satu tempat.</span>
+                </div>
+
+                <div id="loginAlert" class="login-alert" role="alert" aria-live="polite"></div>
+
+                <form id="loginForm" class="login-form" novalidate>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" placeholder="admin@toko.com" required>
+
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Minimal 6 karakter" minlength="6" required>
+
+                    <div class="login-form-row">
+                        <label class="login-remember">
+                            <input type="checkbox" checked>
+                            <span>Ingat perangkat ini</span>
+                        </label>
+                        <a href="#" class="login-link">Lupa Password?</a>
+                    </div>
+
+                    <button id="loginButton" class="login-button" type="submit">
+                        <span class="login-button-text">Login</span>
+                        <span class="login-spinner" aria-hidden="true"></span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

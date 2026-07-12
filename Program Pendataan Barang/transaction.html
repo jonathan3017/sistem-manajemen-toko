@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Toko</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">SistemToko</div>
+    <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="item_data.html">Data Barang</a></li>
+        <li><a href="transaction_history.html">Riwayat Transaksi</a></li>
+        <li><a href="report.html">Laporan</a></li>
+    </ul>
+</div>
+
+<!-- KONTEN -->
+<div class="page">
+
+    <h1 class="page-title">Transaksi Pembeli</h1>
+    <p class="page-subtitle">Layani pembelian langsung di toko</p>
+
+    <div class="form-card">
+
+        <h3>Data Pembeli</h3>
+        <input type="text" id="kodePembeli" placeholder="Kode Pembeli">
+
+        <hr>
+
+        <h3>Tambah Barang</h3>
+
+        <div class="item-row">
+            <input list="daftarBarang" id="namaBarang" placeholder="Cari barang...">
+            <datalist id="daftarBarang">
+                <option value="Gula">
+                <option value="Beras">
+                <option value="Minyak Goreng">
+                <option value="Kopi">
+                <option value="Teh">
+            </datalist>
+
+            <input type="number" id="jumlahBarang" placeholder="Jumlah" value="1">
+
+            <button type="button" id="btnTambahBarang" class="btn-add">Tambah</button>
+        </div>
+
+        <hr>
+
+        <h3>Daftar Barang Dibeli</h3>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Barang</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="tabelTransaksi"></tbody>
+
+        </table>
+
+        <hr>
+
+        <h3>Biaya Servis</h3>
+        <div class="item-row">
+            <input type="number" id="biayaServis" placeholder="Biaya Servis (opsional)" min="0" value="0">
+            <input type="text" id="keteranganServis" placeholder="Keterangan Servis (opsional)">
+        </div>
+
+        <h3 class="total">Total: <span id="totalHarga">Rp 0</span></h3>
+
+        <button id="btnSimpan" class="btn-submit">Simpan Transaksi</button>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2025 Sistem Pendataan Toko
+</div>
+
+    <script src="js/authGuard.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

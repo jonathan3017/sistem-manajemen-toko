@@ -1,0 +1,1227 @@
+/* =====================
+   GLOBAL
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    padding-top: 70px;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+    width: 100%;
+    height: 80px;
+    background: rgba(0,0,0,0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 8px;
+}
+
+.navbar ul li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 0;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding: 0 18px;
+    border-radius: 8px;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    color: #f39c12;
+}
+
+.nav-logout {
+    background: #38a169;
+    color: #ffffff;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logout:hover {
+    background: #2f855a;
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* =====================
+   BANNER / HERO
+===================== */
+.banner-section {
+    position: relative;
+    height: 649px !important;
+    overflow: hidden;
+    margin-top: 10px; 
+}
+
+.banner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.banner-text h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.banner-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn-view-menu {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #f39c12;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-view-menu:hover {
+    background: #e67e22;
+}
+
+/* =====================
+   CONTENT TITLE
+===================== */
+.content {
+    text-align: center;
+    padding: 100px 20px 40px;
+}
+
+.content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.content p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* =====================
+   CARD / SECTION
+===================== */
+.menu-section {
+    padding: 40px 60px 80px;
+    margin-bottom: 100px;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.menu-item img {
+    width: 70px;
+    margin-bottom: 15px;
+}
+
+.menu-item h3 {
+    margin-bottom: 8px;
+}
+
+.menu-item p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* =====================
+   FORM
+===================== */
+form input,
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+    background: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .banner-text h1 {
+        font-size: 30px;
+    }
+
+    .content {
+        padding-top: 120px;
+    }
+}
+
+/* =========================
+   HALAMAN TRANSAKSI PEMBELI
+========================= */
+
+/* JARAK KONTEN DARI NAVBAR */
+.page {
+    padding: 120px 20px 80px;
+}
+
+/* JUDUL HALAMAN */
+.page-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+/* CARD FORM */
+.form-card {
+    background: #ffffff;
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 35px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* JUDUL BAGIAN */
+.form-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* GARIS PEMISAH */
+.form-card hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* INPUT & SELECT */
+.form-card input,
+.form-card select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* BARIS TAMBAH BARANG */
+.item-row {
+    display: flex;
+    gap: 12px;
+    align-items: stretch; /* PENTING: samakan tinggi */
+}
+
+.item-row select,
+.item-row input {
+    flex: 1;
+    height: 44px;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    display: block; /* matikan baseline text */
+}
+
+.item-row input[list] {
+    flex: 1;
+    height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* TOMBOL TAMBAH DAN KURANG */
+.qty-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.qty-control button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 4px;
+    background: #ddd;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.qty-control button:hover {
+    background: #bbb;
+}
+
+/* TOMBOL TAMBAH */
+.btn-add {
+    height: 44px;              /* SAMA dengan input */
+    padding: 0 20px;           /* TIDAK pakai padding vertikal */
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+    display: block;            /* WAJIB agar tidak naik */
+    margin-top: 8px;
+}
+
+.btn-add:hover {
+    background-color: #219150;
+}
+
+/* TABEL BARANG */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.table th {
+    background: #f2f2f2;
+    font-weight: bold;
+}
+
+/* TOTAL */
+.total {
+    text-align: right;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* TOMBOL SIMPAN */
+.btn-submit {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #e67e22;
+}
+
+/* ===============================
+   RIWAYAT TRANSAKSI
+================================ */
+
+.history-page {
+    padding-bottom: 60px;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 100vh;
+}
+
+.history-page h1 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.history-page .subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.page-header {
+    text-align: center;
+    margin-top: 0px;   /* pas dengan navbar */
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* FILTER */
+.filter-box {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filter-box input[type="date"] {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #f59e0b;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #d97706;
+}
+
+/* TABEL */
+.table-wrapper {
+    margin-top: 25px;
+}
+
+.search-filter-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 0 20px;
+    flex-wrap: wrap;
+}
+
+.search-filter-field {
+    flex: 1;
+    min-width: 180px;
+}
+
+.search-filter-field-wide {
+    flex: 2;
+    min-width: 240px;
+}
+
+.search-filter-box input,
+.search-filter-box select {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    color: #111;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.btn-reset-filter {
+    min-height: 44px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #6c757d;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn-reset-filter:hover {
+    background: #5c636a;
+}
+
+/* TABEL LEBIH BESAR */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 17px;
+}
+
+/* HEADER */
+th {
+    padding: 18px 14px;
+    background: #f3f4f6;
+    font-weight: 600;
+}
+
+/* ISI */
+td {
+    padding: 18px 14px;
+}
+
+/* RAPI */
+th, td {
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* HOVER */
+tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* Lebar tiap kolom */
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 150px;
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    width: 300px;
+    text-align: left;
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+    width: 150px;
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+    width: 250px;
+    text-align: center ;
+}
+
+table th:nth-child(5),
+table td:nth-child(5) {
+    width: 150px;
+}
+
+/* TOMBOL DETAIL */
+.btn-detail {
+    height: 44px;
+    padding: 0 20px;
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 1px;
+}
+
+.btn-detail:hover {
+    background-color: #219150;
+}
+
+.table tbody tr td {
+    font-weight: normal;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.table tbody tr td strong {
+    font-weight: 600;
+}
+
+/* Rata tengah untuk header kolom Jumlah */
+.table th:nth-child(2) {
+    text-align: center !important;
+}
+
+/* Rata tengah kolom Stok di tabel Data Barang */
+.dynamic-table td:nth-child(4),
+.dynamic-table th:nth-child(4) {
+    text-align: center !important;
+}
+
+/* Semua kolom rata tengah */
+.history-page .table td,
+.history-page .table th {
+    text-align: center !important;
+}
+
+/* Kecuali Nama Pembeli */
+.history-page .table td:nth-child(2),
+.history-page .table th:nth-child(2) {
+    text-align: left !important;
+}
+
+/* PERBAIKAN AKHIR - RATA TENGAH TOTAL HARGA */
+.history-page table td:nth-child(4),
+.history-page table th:nth-child(4) {
+    text-align: center !important;
+}
+
+/* Rata tengah Harga Beli dan Harga Jual di Data Barang */
+.dynamic-table td:nth-child(5),
+.dynamic-table td:nth-child(6),
+.dynamic-table th:nth-child(5),
+.dynamic-table th:nth-child(6) {
+    text-align: center !important;
+}
+
+/* Kolom Aksi di Data Barang rata tengah */
+.dynamic-table td:nth-child(7),
+.dynamic-table th:nth-child(7) {
+    text-align: center !important;
+}
+
+/* Stok Habis */
+.stock-empty {
+    color: #d32f2f;
+    font-weight: 700;
+    background: #ffebee;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+/* Stok Menipis - Warna Kuning (PAKSA) */
+.stock-low {
+    color: #f57f17 !important;
+    font-weight: 600 !important;
+}
+
+.stock-label {
+    display: inline-block !important;
+    margin-left: 6px !important;
+    padding: 2px 8px !important;
+    border-radius: 999px !important;
+    background: #fff8e1 !important;
+    color: #f57f17 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+
+/* =====================
+   PERBAIKAN DATA BARANG
+===================== */
+
+/* Hilangkan grid layout yang mengganggu tabel */
+.menu-section .menu-items {
+    display: block !important;
+    width: 100%;
+    padding: 0;
+}
+
+/* Style tabel data barang */
+.dynamic-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.dynamic-table th {
+    background: #f1f3f5;
+    padding: 14px 12px;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.dynamic-table td {
+    padding: 12px;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+.dynamic-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+/* Perbaikan search filter box */
+.search-filter-box {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0 25px 0;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.search-filter-box input[type="text"] {
+    flex: 2;
+    min-width: 200px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+}
+
+.search-filter-box select {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+}
+
+.search-filter-box .btn-reset {
+    padding: 10px 25px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.search-filter-box .btn-reset:hover {
+    background: #5a6268;
+}
+
+/* DASHBOARD SEDERHANA 3 KOLOM */
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.dashboard-box {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 35px;
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.dashboard-box h3 {
+    font-size: 14px;
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.dashboard-box p {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f7a4d;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .dashboard-box {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* PISAHKAN VIDEO (TETAP GELAP) DAN DASHBOARD (PUTIH) */
+.banner-section:first-of-type {
+    position: relative;
+    height: 659px;
+    overflow: hidden;
+}
+
+.banner-section:first-of-type::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+/* DASHBOARD - TANPA OVERLAY, BACKGROUND PUTIH */
+.banner-section:last-of-type {
+    background: white !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 20px 0 40px !important;
+}
+
+.banner-section:last-of-type::after {
+    display: none !important;
+}
+
+.banner-section:last-of-type .banner-video {
+    display: none !important;
+}
+
+.banner-section:last-of-type .banner-text {
+    display: none !important;
+}
+
+/* JARAK DASHBOARD KE FOOTER */
+.dashboard-wrapper {
+    padding: 20px 0 60px !important;
+    margin-bottom: 20px;
+}
+
+.dashboard-container {
+    margin-bottom: 30px;
+}
+
+/* Atau jika ingin jarak lebih besar */
+.dashboard-wrapper {
+    padding-bottom: 80px !important;
+}
+
+/* =====================
+   LOGIN
+===================== */
+.login-body {
+    padding-top: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(56, 161, 105, 0.18), transparent 32%),
+        linear-gradient(135deg, #1a365d 0%, #213f68 48%, #f5f7fa 48%, #f5f7fa 100%);
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+
+.login-hero {
+    width: min(1080px, 100%);
+    min-height: 640px;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    align-items: center;
+    gap: 48px;
+    animation: loginFadeIn 0.65s ease both;
+}
+
+.login-brand {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.login-brand-mark {
+    width: 58px;
+    height: 58px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #38a169;
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+.login-brand p {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.login-brand small {
+    display: block;
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 8px;
+    padding: 38px;
+    box-shadow: 0 24px 70px rgba(26, 54, 93, 0.24);
+}
+
+.login-card-header {
+    margin-bottom: 24px;
+}
+
+.login-eyebrow {
+    color: #38a169;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0;
+    margin-bottom: 8px;
+}
+
+.login-card h1 {
+    color: #1a365d;
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.login-card-header span {
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.login-alert {
+    display: none;
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.login-alert.is-visible {
+    display: block;
+    animation: loginFadeIn 0.25s ease both;
+}
+
+.login-alert.error {
+    background: #fff1f2;
+    color: #b42318;
+    border: 1px solid #fecdd3;
+}
+
+.login-alert.success {
+    background: #ecfdf3;
+    color: #027a48;
+    border: 1px solid #bbf7d0;
+}
+
+.login-form {
+    display: grid;
+    gap: 10px;
+}
+
+.login-form label {
+    color: #1a365d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 0 14px;
+    font-size: 15px;
+    background: #ffffff;
+    color: #101828;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-form input:focus {
+    border-color: #38a169;
+    box-shadow: 0 0 0 4px rgba(56, 161, 105, 0.16);
+}
+
+.login-form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 8px 0 12px;
+    flex-wrap: wrap;
+}
+
+.login-remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #475467 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+}
+
+.login-remember input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #38a169;
+    margin: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.login-remember span {
+    white-space: nowrap;
+}
+
+.login-link {
+    color: #1a365d;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.login-link:hover {
+    color: #38a169;
+}
+
+.login-button {
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    background: #1a365d;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 14px 28px rgba(26, 54, 93, 0.2);
+}
+
+.login-button:hover:not(:disabled) {
+    background: #234876;
+    transform: translateY(-1px);
+}
+
+.login-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.82;
+}
+
+.login-spinner {
+    width: 18px;
+    height: 18px;
+    display: none;
+    border: 2px solid rgba(255, 255, 255, 0.38);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: loginSpin 0.8s linear infinite;
+}
+
+.login-button.is-loading .login-spinner {
+    display: inline-block;
+}
+
+.nav-logout {
+    background: #38a169;
+    color: #ffffff;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.nav-logout:hover {
+    background: #2f855a;
+}
+
+@keyframes loginFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes loginSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 900px) {
+    .login-body {
+        background:
+            radial-gradient(circle at top, rgba(56, 161, 105, 0.18), transparent 34%),
+            linear-gradient(180deg, #1a365d 0%, #1a365d 38%, #f5f7fa 38%, #f5f7fa 100%);
+    }
+
+    .login-hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .login-brand {
+        justify-content: center;
+        text-align: left;
+    }
+
+    .login-card {
+        width: min(440px, 100%);
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .login-page {
+        padding: 20px;
+    }
+
+    .login-brand p {
+        font-size: 24px;
+    }
+
+    .login-brand-mark {
+        width: 50px;
+        height: 50px;
+    }
+
+    .login-card {
+        padding: 26px 20px;
+    }
+
+    .login-card h1 {
+        font-size: 24px;
+    }
+
+    .login-form-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

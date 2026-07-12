@@ -1,0 +1,26 @@
+{
+  "name": "sistem-pendataan-toko-backend",
+  "version": "1.0.0",
+  "description": "Backend Express.js untuk aplikasi kasir Sistem Pendataan Toko dengan PostgreSQL.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "db:init-users": "node scripts/initUsersTable.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.5.2",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^6.9.16",
+    "pdfkit": "^0.15.1",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

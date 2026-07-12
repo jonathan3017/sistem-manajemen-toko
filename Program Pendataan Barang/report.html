@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Toko</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">SistemToko</div>
+    <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="item_data.html">Data Barang</a></li>
+        <li><a href="transaction_history.html">Riwayat Transaksi</a></li>
+        <li><a href="report.html">Laporan</a></li>
+    </ul>
+</nav>
+
+<div class="content">
+    <h2>Laporan Penjualan</h2>
+    <p>Generate laporan PDF dan kirim via email</p>
+</div>
+
+<div class="menu-section">
+    <div class="menu-items">
+
+        <div class="menu-item">
+            <form>
+                <select required>
+                    <option>Laporan Harian</option>
+                    <option>Laporan Bulanan</option>
+                    <option>Laporan Tahunan</option>
+                </select>
+                <input type="email" placeholder="Email Tujuan" required>
+                <button class="btn-view-menu">Generate & Kirim PDF</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 Sistem Pendataan Toko</p>
+</div>
+
+    <script src="js/authGuard.js"></script>
+    <script src="js/report.js"></script>
+</body>
+</html>
