@@ -17,9 +17,9 @@ Sistem berbasis web untuk mengelola stok barang, transaksi penjualan, dan lapora
 
 - **Dashboard** — Ringkasan penjualan hari ini (barang terjual, jumlah pembeli, pendapatan)
 - **Manajemen Data Barang** — Tambah, edit, lihat stok & harga, notifikasi stok menipis
-- **Transaksi Pembeli** — Cari barang, keranjang belanja, biaya servis, simpan transaksi
+- **Transaksi Pembeli** — Proses transaksi penjualan langsung di toko (cari barang, tambahkan ke daftar belanja, hitung total, simpan transaksi)
 - **Riwayat Transaksi** — Lihat transaksi per tanggal & detailnya
-- **Laporan PDF** — Generate laporan harian & kirim via email
+- **Laporan PDF** — Generate laporan harian, laporan bulanan, laporan tahunan & kirim via email
 
 ---
 
