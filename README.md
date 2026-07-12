@@ -35,4 +35,11 @@ Sistem berbasis web untuk mengelola stok barang, transaksi penjualan, dan lapora
 
 ## Status
 
-Saat ini digunakan di **toko keluarga** untuk operasional sehari-hari.
+Sistem sudah selesai dibangun dan semua fitur berfungsi dengan baik. Saat ini dalam proses pengisian data barang sebelum digunakan sepenuhnya di toko.
+
+---
+
+## Screenshot
+
+**Lihat semua screenshot dalam satu file PDF:**  
+[Download / Lihat Screenshot Sistem Toko](screenshot-sistem-toko.pdf)
