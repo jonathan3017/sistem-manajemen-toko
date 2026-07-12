@@ -42,4 +42,4 @@ Sistem sudah selesai dibangun dan semua fitur berfungsi dengan baik. Saat ini da
 ## Screenshot
 
 **Lihat semua screenshot dalam satu file PDF:**  
-[Download / Lihat Screenshot Sistem Toko](screenshot-sistem-toko.pdf)
+[Klik di sini untuk melihat screenshot](screenshots/Tampilan Website - Sistem Manajemen Toko.pdf)
